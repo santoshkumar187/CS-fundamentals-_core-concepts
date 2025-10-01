@@ -1,6 +1,13 @@
 Objects:
      real world entity like (functions, methods)
 
+👉 Example:
+
+A Car in real life has properties (color, model, speed) and behaviors (drive, stop, honk).
+
+In programming, we represent it as an object.
+
+
 // exmaple
      class Car {
     String color;  is object
