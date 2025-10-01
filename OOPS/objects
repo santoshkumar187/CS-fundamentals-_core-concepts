@@ -1,0 +1,21 @@
+Objects:
+     real world entity like (functions, methods)
+
+// exmaple
+     class Car {
+    String color;  is object
+    int speed; also object
+
+    void drive() {
+        System.out.println("The car is driving at " + speed + " km/h");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();   // Creating object
+        myCar.color = "Red";
+        myCar.speed = 100;
+        myCar.drive();           // Calling method
+    }
+}
