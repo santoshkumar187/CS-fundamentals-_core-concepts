@@ -1,0 +1,45 @@
+****Interview Pointer of view**********
+
+Definition: “A class is a blueprint for objects that defines attributes and behavior.”
+
+Difference between Class & Object:
+
+Class → Blueprint
+
+Object → Instance of a class
+
+Why use classes?
+
+Code reusability
+
+Encapsulation
+
+Organization of data & behavior
+
+Constructors:
+
+Default constructor → No parameters
+
+Parameterized constructor → Initialize attributes directly
+
+
+
+
+
+*******simple example **********
+
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();    // Object creation
+        myCar.color = "Red";
+        myCar.model = "Tesla";
+
+        myCar.start();            // Call method
+    }
+}
+
+
+Car → class (blueprint)
+
+myCar → object (instance of the class)
