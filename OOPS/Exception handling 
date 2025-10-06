@@ -1,0 +1,81 @@
+⚙️ Exception Handling — Java (Interview Points)
+
+🔹 What is Exception Handling?
+
+A way to handle runtime errors so the program doesn’t crash.
+
+
+---
+
+🔹 Keywords
+
+Keyword	Use
+
+try	Block of risky code
+catch	Handles exception
+finally	Always runs (cleanup)
+throw	Manually throw an exception
+throws	Declares an exception in method
+
+
+
+---
+
+🔹 Types of Exceptions
+
+Type	Checked	Unchecked
+
+Checked	Compile-time	e.g., IOException
+Unchecked	Runtime	e.g., ArithmeticException
+
+
+
+---
+
+🔹 Example
+
+try {
+    int a = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+} finally {
+    System.out.println("End of program");
+}
+
+
+---
+
+🔹 throw vs throws
+
+throw	throws
+
+Used to create/throw exception	Declares exception in method
+Inside method	In method signature
+
+
+
+---
+
+🔹 Common Exceptions
+
+ArithmeticException – divide by zero
+
+NullPointerException – object is null
+
+ArrayIndexOutOfBoundsException – invalid index
+
+IOException – input/output error
+
+
+
+---
+
+🔹 Best Practices
+
+Handle specific exceptions.
+
+Never leave catch block empty.
+
+Always use finally for cleanup.
+
+Use custom exceptions for meaningful error messages.
