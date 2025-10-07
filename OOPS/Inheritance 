@@ -1,0 +1,164 @@
+Inheritance (Interview Point of View)
+
+🔹 Definition
+
+> Inheritance is a mechanism in OOP where one class (child/subclass) can acquire the properties and behaviors (methods & variables) of another class (parent/superclass).
+
+
+
+It helps in code reusability and method overriding.
+
+
+---
+
+🔹 Real-Life Example
+
+Imagine:
+
+A class Vehicle — has common features like start(), stop().
+
+A class Car — can inherit these features and add more, like airCondition().
+
+
+So Car inherits from Vehicle.
+
+
+---
+
+✅ Simple Java Example
+
+// Parent class
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle starts");
+    }
+}
+
+// Child class
+class Car extends Vehicle {
+    void airCondition() {
+        System.out.println("Car has AC feature");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.start();         // Inherited from Vehicle
+        myCar.airCondition();  // Car’s own method
+    }
+}
+
+Output:
+
+Vehicle starts
+Car has AC feature
+
+
+---
+
+💬 Interview Key Points
+
+Concept	Description
+
+Purpose	To reuse existing code and avoid duplication
+Keyword	extends (in Java)
+Parent Class	Also called superclass or base class
+Child Class	Also called subclass or derived class
+Type of Inheritance	Single, Multilevel, Hierarchical (Java does not support multiple inheritance using classes)
+Method Overriding	Child can redefine a method from parent
+super keyword	Used to call parent class constructor or methods
+
+
+
+---
+
+
+
+What is inheritance?
+
+> Inheritance is an OOP concept where a child/subclass acquires the properties and methods of a parent/superclass, allowing code reuse and hierarchical relationships.
+
+
+
+
+---
+
+2. Why do we use inheritance?
+
+To reuse existing code.
+
+To reduce redundancy.
+
+To allow method overriding and polymorphic behavior.
+
+To model real-world hierarchical relationships.
+
+
+
+---
+
+3. What is the difference between inheritance and composition?
+
+Feature	Inheritance	Composition
+
+Relationship	"Is-a"	"Has-a"
+Code reuse	Yes	Yes
+Flexibility	Less flexible	More flexible
+Example	Car extends Vehicle	Car has Engine
+
+
+
+---
+
+4. Can constructors be inherited?
+
+> ❌ No. Constructors are not inherited, but a subclass can call the parent’s constructor using the super keyword.
+
+
+
+
+---
+
+5. What is method overriding?
+
+> When a subclass redefines a method of its parent class with the same name, return type, and parameters, it is called method overriding.
+Enables runtime polymorphism.
+
+
+
+Example:
+
+class Vehicle {
+    void start() { System.out.println("Vehicle starts"); }
+}
+class Car extends Vehicle {
+    void start() { System.out.println("Car starts"); } // overrides
+}
+
+
+---
+
+6. What is the use of the super keyword?
+
+To call the parent class constructor.
+
+To call a parent class method that is overridden in the child class.
+
+
+Example:
+
+class Vehicle {
+    void start() { System.out.println("Vehicle starts"); }
+}
+class Car extends Vehicle {
+    void start() {
+        super.start(); // call parent method
+        System.out.println("Car starts"); 
+    }
+}
+
+Output:
+
+Vehicle starts
+Car starts
