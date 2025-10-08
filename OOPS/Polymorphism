@@ -1,0 +1,108 @@
+💡 Simple Definition:
+
+Polymorphism allows the same function or method name to perform different actions depending on the object type that invokes it.
+
+🔹 Types of Polymorphism in Java
+1️⃣ Compile-Time Polymorphism (Static Binding / Method Overloading)
+
+Achieved within the same class
+
+Same method name, but different parameter lists
+
+Decided at compile time
+
+✅ Example:
+class Calculator {
+    // Method Overloading
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(5, 3));      // calls int version
+        System.out.println(calc.add(4.5, 3.2));  // calls double version
+    }
+}
+
+
+🧠 Interview Explanation:
+
+Here, the method add() is overloaded — same name, different parameter types.
+The compiler decides which version to call based on the arguments at compile time.
+
+2️⃣ Run-Time Polymorphism (Dynamic Binding / Method Overriding)
+
+Achieved between classes (parent and child)
+
+Method has same name, same parameters, but different implementation
+
+Decided at runtime, based on which object is actually calling it
+
+✅ Example:
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a1 = new Dog();  // parent reference, child object
+        Animal a2 = new Cat();  // parent reference, child object
+
+        a1.sound();  // Output: Dog barks
+        a2.sound();  // Output: Cat meows
+    }
+}
+
+
+🧠 Interview Explanation:
+
+Even though a1 and a2 are of type Animal,
+the actual object (Dog, Cat) decides which method is executed at runtime.
+This is runtime polymorphism, a key part of method overriding.
+
+💬 Common Interview Questions
+
+Q1: What’s the difference between Overloading and Overriding?
+
+Feature	Overloading	Overriding
+When decided	Compile-time	Runtime
+Involves	Same class	Parent & Child classes
+Parameters	Must differ	Must be same
+Access modifier	Can change	Can’t reduce visibility
+Keyword	static methods can be overloaded	static methods cannot be overridden
+
+
+
+
+Q2: Why is polymorphism important?
+
+It increases code reusability, flexibility, and maintainability.
+You can write code that works on the parent class, but executes behavior of child classes dynamically.
+
+🧩 Real-Life Analogy:
+
+A remote control (reference) can operate a TV, AC, or Sound System (objects).
+Same action “press power button” → different behaviors depending on the device — that’s polymorphism!
