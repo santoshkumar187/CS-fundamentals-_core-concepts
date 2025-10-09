@@ -1,0 +1,121 @@
+1️⃣ Process
+Definition:
+
+A process is a program in execution.
+It’s the unit of work in an operating system.
+
+Key Points:
+
+Each process has its own memory space (code, data, stack).
+
+Processes are independent; one process crash usually doesn’t affect others.
+
+Processes are managed by the OS scheduler.
+
+States of a Process:
+
+New → Process is created
+
+Ready → Waiting for CPU
+
+Running → Executing instructions
+
+Waiting / Blocked → Waiting for I/O or event
+
+Terminated → Finished execution
+
+Example in Java (Process Creation):
+
+import java.io.IOException;
+
+public class ProcessExample {
+    public static void main(String[] args) throws IOException {
+        // Run a system command (process)
+        Process process = Runtime.getRuntime().exec("notepad"); // opens Notepad on Windows
+        System.out.println("Process started...");
+    }
+}
+
+2️⃣ Thread
+Definition:
+
+A thread is the smallest unit of execution within a process.
+
+Multiple threads can exist within a single process and share memory space.
+
+Threads are lighter than processes (less overhead).
+
+Key Points:
+
+Threads share the same data segment, but have separate stack & registers.
+
+Used for parallel tasks, e.g., background operations, handling multiple requests.
+
+Example in Java (Thread Creation):
+
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running: " + Thread.currentThread().getName());
+    }
+}
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start(); // Starts the thread
+
+        MyThread t2 = new MyThread();
+        t2.start();
+    }
+}
+
+
+Output (example):
+
+Thread is running: Thread-0
+Thread is running: Thread-1
+
+3️⃣ Difference Between Process and Thread
+Feature	Process	Thread
+Memory	Separate memory space	Shared memory within process
+Creation	Heavyweight	Lightweight
+Communication	Inter-process communication	Shared variables
+Isolation	Independent	Less isolated (shared data)
+Overhead	High	Low
+4️⃣ Multi-threading in Java
+
+Runnable Interface: Alternative to extending Thread
+
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Thread running via Runnable: " + Thread.currentThread().getName());
+    }
+}
+
+public class RunnableExample {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable());
+        t.start();
+    }
+}
+
+
+Thread Lifecycle: New → Runnable → Running → Waiting/Blocked → Terminated
+
+Synchronization:
+
+Use synchronized keyword to prevent race conditions
+
+Example: Two threads modifying a shared variable safely
+
+5️⃣ Interview Tips
+
+Always explain difference between process and thread.
+
+Be ready to explain why threads are useful (parallelism, performance).
+
+Mention shared memory and race conditions.
+
+In Java interviews, show example with Thread class or Runnable.
+
+Understand thread lifecycle and states.
