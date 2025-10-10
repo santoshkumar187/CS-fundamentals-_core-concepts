@@ -1,0 +1,24 @@
+
+Definition of TCP and UDP:
+
+TCP (Transmission Control Protocol):
+A connection-oriented protocol that provides reliable, ordered, and error-checked delivery of data between applications over a network. It ensures that all packets reach the destination in the correct order.
+
+UDP (User Datagram Protocol):
+A connectionless protocol that allows fast, but unreliable transmission of data. It does not guarantee delivery, order, or error correction, making it suitable for applications where speed is more important than reliability.
+
+
+
+
+
+| Feature             | **TCP (Transmission Control Protocol)**                            | **UDP (User Datagram Protocol)**                             |
+| ------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Connection Type** | Connection-oriented (requires handshake before data transfer)      | Connectionless (no handshake, just sends data)               |
+| **Reliability**     | Reliable (guarantees delivery, retransmits lost packets)           | Unreliable (no guarantee of delivery, order, or duplication) |
+| **Ordering**        | Ensures packets arrive in order                                    | No ordering guarantee                                        |
+| **Error Checking**  | Yes, with error detection, acknowledgments, and retransmission     | Error detection only (checksums), no retransmission          |
+| **Speed**           | Slower due to connection setup and reliability overhead            | Faster, minimal overhead                                     |
+| **Use Cases**       | Web browsing (HTTP/HTTPS), email (SMTP, IMAP), file transfer (FTP) | Streaming (audio/video), gaming, DNS queries, VoIP           |
+| **Header Size**     | 20 bytes minimum                                                   | 8 bytes minimum                                              |
+| **Flow Control**    | Yes, uses window-based flow control                                | No flow control                                              |
+| **Example Ports**   | HTTP (80), HTTPS (443), FTP (21)                                   | DNS (53), DHCP (67/68), TFTP (69)                            |
