@@ -1,0 +1,166 @@
+1. CPU Scheduling
+🧠 Concept:
+
+When multiple processes are ready to run, the OS decides which process gets the CPU next — this is CPU Scheduling.
+
+📚 Common Scheduling Algorithms:
+Algorithm	Description	Example
+FCFS (First Come First Serve)	Runs in arrival order	Like a queue in a shop
+SJF (Shortest Job First)	Runs shortest process first	Minimizes average waiting time
+RR (Round Robin)	Each gets fixed time slice (quantum)	Used in time-sharing systems
+Priority Scheduling	Based on priority number	High priority → runs first
+Multilevel Queue	Different queues for foreground/background	Advanced scheduling system
+🧮 Key Terms:
+
+Burst Time – Time required by a process for CPU.
+
+Waiting Time – Time spent waiting in ready queue.
+
+Turnaround Time – Total time from arrival to completion.
+
+📦 2. Process Synchronization
+🧠 Concept:
+
+When multiple processes access shared data, synchronization prevents data inconsistency.
+
+💡 Example Problem: Race Condition
+
+Two threads modifying the same variable at the same time can cause incorrect results.
+
+🧰 Synchronization Tools:
+
+Mutex (Mutual Exclusion)
+
+Semaphore (Counting mechanism)
+
+Monitors
+
+Example (Semaphore):
+
+wait(mutex);
+   // critical section
+signal(mutex);
+
+🔒 3. Deadlock
+🧠 Concept:
+
+Deadlock occurs when processes are waiting for each other’s resources, and none can proceed.
+
+Example:
+
+Process A holds Resource 1, waiting for Resource 2
+
+Process B holds Resource 2, waiting for Resource 1 → Deadlock
+
+🧭 Deadlock Conditions (Coffman’s):
+
+Mutual Exclusion
+
+Hold and Wait
+
+No Preemption
+
+Circular Wait
+
+🧩 Deadlock Handling Methods:
+Method	Description
+Prevention	Prevent one condition (e.g., circular wait)
+Avoidance	Banker's Algorithm
+Detection	Detect and recover
+Ignore	Used in some systems (like Windows)
+💾 4. Memory Management
+🧠 Concept:
+
+Manages how processes use main memory (RAM) efficiently.
+
+🔑 Concepts:
+
+Logical vs Physical Address
+
+Swapping – Moving processes between main memory and disk
+
+Paging – Divide memory into fixed-size blocks (pages)
+
+Segmentation – Divide based on logical sections (code, data, stack)
+
+📊 Page Table:
+
+Maps logical pages to physical frames.
+
+Example:
+
+Page	Frame
+0	5
+1	9
+2
+
+
+
+
+5. Virtual Memory
+🧠 Concept:
+
+Allows processes to use more memory than physically available by using disk as extension of RAM.
+
+Techniques:
+
+Demand Paging – Load pages only when needed
+
+Page Replacement Algorithms:
+
+FIFO (First In First Out)
+
+LRU (Least Recently Used)
+
+Optimal (Best but theoretical)
+
+📁 6. File Management
+🧠 Concept:
+
+OS manages files and directories on secondary storage.
+
+Operations:
+
+Create, Delete, Read, Write, Move, Rename
+
+File Attributes: name, type, size, permissions
+
+Directory Structures:
+
+Single-level
+
+Two-level
+
+Tree-structured
+
+Acyclic graph
+
+📀 7. Disk Scheduling
+🧠 Concept:
+
+Manages the order of disk I/O requests to minimize seek time.
+
+Algorithms:
+Algorithm	Description
+FCFS	Serve in order of arrival
+SSTF	Shortest Seek Time First
+SCAN	Moves like elevator (back & forth)
+C-SCAN	Circular SCAN (only one direction)
+🔐 8. Security & Protection
+🧠 Concept:
+
+OS ensures data is protected against unauthorized access.
+
+Methods:
+
+Authentication (passwords, biometrics)
+
+Authorization (access control)
+
+Encryption
+
+🧠 9. System Calls & Kernel Types
+Kernel Type	Description
+Monolithic Kernel	All OS services in one layer
+Microkernel	Minimal kernel + services in user space
+Hybrid	Combination (used in Windows, macOS)
