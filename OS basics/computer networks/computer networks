@@ -1,0 +1,54 @@
+The OSI Model (Open Systems Interconnection Model) is a conceptual framework used to understand and standardize how different networking protocols interact in a network. 
+  It divides the communication process into 7 distinct layers, each with specific functions:
+
+
+The **OSI Model (Open Systems Interconnection Model)** is a conceptual framework used to understand and standardize how different networking protocols interact in a network. It divides the communication process into **7 distinct layers**, each with specific functions:
+
+---
+
+### 🧱 The 7 Layers of the OSI Model (Bottom to Top)
+
+| Layer | Name                | Description |
+|-------|---------------------|-------------|
+| **7** | **Application**     | Closest to the user. Interfaces with software applications (e.g., browsers, email clients). Protocols: HTTP, FTP, SMTP |
+| **6** | **Presentation**    | Translates data formats, encryption/decryption, compression. Think of it as the “translator” layer |
+| **5** | **Session**         | Manages sessions and controls dialogues between computers. Handles session setup, maintenance, and termination |
+| **4** | **Transport**       | Ensures reliable data transfer. Handles segmentation, flow control, and error correction. Protocols: TCP, UDP |
+| **3** | **Network**         | Determines the best path for data. Handles logical addressing (IP addresses). Protocols: IP, ICMP |
+| **2** | **Data Link**       | Responsible for node-to-node data transfer and error detection. Uses MAC addresses. Protocols: Ethernet, PPP |
+| **1** | **Physical**        | Deals with the physical connection (cables, switches, voltage levels). Transmits raw bits over the medium |
+
+
+
+  1️⃣ What is the OSI Model and why is it important?
+Answer: The OSI (Open Systems Interconnection) Model is a conceptual framework that standardizes the functions of a telecommunication or
+computing system into seven distinct layers. It helps different systems communicate over a network and guides protocol development and troubleshooting.
+
+2️⃣ Name the 7 layers of the OSI Model.
+Answer: From top to bottom:
+
+Application
+
+Presentation
+
+Session
+
+Transport
+
+Network
+
+Data Link
+
+Physical
+
+3️⃣ What is the difference between TCP and UDP, and which OSI layer do they belong to?
+Answer: TCP (Transmission Control Protocol) is connection-oriented and ensures reliable data delivery, 
+  while UDP (User Datagram Protocol) is connectionless and faster but less reliable. Both operate at the Transport Layer (Layer 4).
+
+4️⃣ What is the role of the Data Link Layer?
+Answer: The Data Link Layer (Layer 2) is responsible for node-to-node data transfer, error detection and correction, and framing. 
+It uses MAC addresses to identify devices on the same network.
+
+5️⃣ How does the Network Layer differ from the Data Link Layer?
+Answer: The Network Layer (Layer 3) handles routing and logical addressing (IP addresses), enabling data to travel across multiple networks. 
+The Data Link Layer deals with physical addressing and ensures reliable transmission within the same network segment.
