@@ -1,7 +1,9 @@
 
 Abstraction is the principle of hiding complex details and exposing only the essential functionalities to the user. It simplifies a system by reducing its complexity, making it easier to understand, use, and maintain.
 
-Think of a TV remote: you press a button to change the channel without needing to know the complex electronics behind the action. In programming, a function like print() is an abstraction; it lets you display text without knowing the low-level code required for the task. This makes code more manageable and reusable.
+Think of a TV remote: you press a button to change the channel without needing to know the complex electronics behind the action. 
+In programming, a function like print() is an abstraction; it lets you display text without knowing the low-level code required for the task. 
+This makes code more manageable and reusable.
 
 // An abstract class cannot be instantiated directly
 public abstract class Animal {
