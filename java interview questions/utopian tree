@@ -1,0 +1,129 @@
+🌳 Concept: Utopian Tree Problem (HackerRank)
+
+Problem statement:
+
+The Utopian tree goes through 2 growth cycles every year:
+
+Spring → it doubles in height
+
+Summer → it grows by 1 meter
+
+You are given the number of growth cycles (N).
+You must find the final height of the tree after N cycles.
+
+🧠 Rules
+
+Initial height of the tree = 1 meter
+
+For each cycle:
+
+If it’s Spring (odd cycle) → height × 2
+
+If it’s Summer (even cycle) → height + 1
+
+📘 Example
+
+Let’s take N = 5 cycles
+
+Cycle	Season	Action	Height
+0	Initial	–	1
+1	Spring	×2	2
+2	Summer	+1	3
+3	Spring	×2	6
+4	Summer	+1	7
+5	Spring	×2	14
+
+✅ Final height = 14 meters
+
+💻 Java Program: Utopian Tree
+import java.util.Scanner;
+
+public class UtopianTree {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of test cases: ");
+        int t = sc.nextInt(); // Number of test cases
+
+        while (t-- > 0) {
+            System.out.print("Enter number of growth cycles: ");
+            int n = sc.nextInt(); // Number of cycles
+            int height = 1;       // Initial height
+
+            for (int i = 1; i <= n; i++) {
+                if (i % 2 != 0) { // Spring cycle (odd)
+                    height = height * 2;
+                } else {           // Summer cycle (even)
+                    height = height + 1;
+                }
+            }
+
+            System.out.println("Final height of the tree: " + height);
+        }
+
+        sc.close();
+    }
+}
+
+🧩 Input / Output Example
+
+Input:
+
+2
+0
+5
+
+
+Output:
+
+1
+14
+
+
+Explanation:
+
+For 0 cycles → height = 1
+
+For 5 cycles → height = 14 (as we calculated earlier)
+
+⚙️ Logic Summary
+Cycle Type	Operation	Code
+Spring (odd)	height × 2	height = height * 2;
+Summer (even)	height + 1	height = height + 1;
+⏱️ Complexity
+
+Time Complexity: O(N) per test case
+
+Space Complexity: O(1)
+
+Would you like me to show an optimized version using a formula (instead of looping)?
+//////////////////
+
+import java.util.Scanner;
+
+public class UtopianTree {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();   // number of growth cycles
+        int height = 1;         // initial height
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 != 0) {
+                height = height * 2;  // Spring: double the height
+            } else {
+                height = height + 1;  // Summer: increase by 1
+            }
+        }
+
+        System.out.println(height);
+    }
+}
+
+           
+
+
+Example:
+
+n = 5 → height = 14 ✅
+
+n = 0 → height = 1 ✅
