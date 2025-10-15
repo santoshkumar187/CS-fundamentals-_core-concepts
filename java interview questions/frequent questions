@@ -1,0 +1,131 @@
+1. What is Java?
+
+👉 Java is an object-oriented, platform-independent programming language that runs on the JVM (Java Virtual Machine).
+
+⚙️ 2. What are the main features of Java?
+
+✅ Simple and Secure
+✅ Platform Independent
+✅ Object-Oriented
+✅ Robust and Multithreaded
+✅ Distributed and Portable
+
+☕ 3. What is JVM, JRE, and JDK?
+
+JVM: Executes Java bytecode.
+
+JRE: JVM + libraries (for running programs).
+
+JDK: JRE + development tools (for developing programs).
+
+🧩 4. What are the 4 main OOP principles?
+
+Encapsulation
+
+Inheritance
+
+Polymorphism
+
+Abstraction
+
+🔐 5. What is Encapsulation?
+
+👉 Wrapping data (variables) and methods together in a class.
+🧠 Example: using private variables with public getters/setters.
+
+🧬 6. What is Inheritance?
+
+👉 When one class inherits properties from another using the extends keyword.
+🧠 Example:
+
+class Dog extends Animal { }
+
+🔄 7. What is Polymorphism?
+
+👉 One name — multiple forms.
+Types:
+
+Compile-time (method overloading)
+
+Runtime (method overriding)
+
+🎭 8. What is Abstraction?
+
+👉 Hiding internal implementation and showing only essential features.
+🧠 Example: Abstract class or Interface.
+
+📦 9. Difference between Abstract Class and Interface
+Abstract Class	Interface
+Has abstract + concrete methods	Only abstract (till Java 7)
+Supports single inheritance	Supports multiple inheritance
+🔁 10. Difference between Overloading and Overriding
+Overloading	Overriding
+Compile-time	Runtime
+Same name, different parameters	Same name, same parameters
+💾 11. What is the difference between == and equals()?
+
+== → compares references (memory location)
+
+.equals() → compares content/values
+
+⚡ 12. What is final, finally, and finalize()?
+Keyword	Meaning
+final	Used to make variable/method/class unchangeable
+finally	Used in try-catch to execute code always
+finalize()	Called by Garbage Collector before object destruction
+🧰 13. What is Exception Handling in Java?
+
+👉 Mechanism to handle runtime errors using try, catch, throw, throws, finally.
+
+🧠 Example:
+
+try {
+  int x = 10 / 0;
+} catch (Exception e) {
+  System.out.println("Error: " + e);
+}
+
+🧱 14. What is the difference between Checked and Unchecked Exception?
+Type	Example	Checked at
+Checked	IOException	Compile time
+Unchecked	NullPointerException	Runtime
+🧩 15. What is the difference between String, StringBuilder, and StringBuffer?
+Type	Mutable	Thread-safe
+String	No	Yes
+StringBuilder	Yes	No
+StringBuffer	Yes	Yes
+🔄 16. What is a Constructor?
+
+👉 Special method used to initialize objects — same name as class, no return type.
+
+🧠 Example:
+
+class Student {
+  Student() { System.out.println("Constructor called"); }
+}
+
+⚙️ 17. What is the difference between static and non-static?
+Static	Non-static
+Belongs to class	Belongs to object
+Can be called without object	Needs object to call
+💬 18. What is ‘this’ and ‘super’ keyword?
+
+this → refers to current class object.
+
+super → refers to parent class object.
+
+🔄 19. What is Multithreading?
+
+👉 Running multiple threads (tasks) simultaneously for better performance.
+🧠 Example:
+
+class MyThread extends Thread {
+  public void run() { System.out.println("Thread running"); }
+}
+
+🧠 20. What is Garbage Collection in Java?
+
+👉 Automatic process by JVM to remove unused objects and free memory.
+Use:
+
+System.gc();
