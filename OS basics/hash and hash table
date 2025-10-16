@@ -1,0 +1,23 @@
+
+
+| Feature            | HashMap                          | Hashtable                         |
+|--------------------|----------------------------------|-----------------------------------|
+| **Thread Safety**  | Not synchronized (not thread-safe) | Synchronized (thread-safe)       |
+| **Performance**    | Faster in single-threaded apps   | Slower due to synchronization     |
+| **Null Keys/Values** | Allows one null key and multiple null values | Does **not** allow null keys or values |
+| **Legacy Status**  | Part of Java Collections Framework | Legacy class from earlier Java versions |
+| **Use Case**       | Preferred in non-threaded environments | Use in multi-threaded environments (though `ConcurrentHashMap` is better) |
+
+
+
+Question: Why is ConcurrentHashMap preferred over Hashtable in multithreaded environments?
+✅ Answer:
+Better Concurrency: ConcurrentHashMap allows concurrent read and write operations by dividing the map into segments. 
+Multiple threads can access different segments without blocking each other.
+
+No Global Locking: Unlike Hashtable, which locks the entire map for every operation,
+ConcurrentHashMap uses finer-grained locking (bucket-level), improving performance.
+
+Null Handling: Like Hashtable, ConcurrentHashMap does not allow null keys or values, ensuring thread safety.
+
+Modern Design: It’s part of the java.util.concurrent package, designed specifically for high-performance concurrent applications.
