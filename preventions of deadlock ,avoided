@@ -1,0 +1,50 @@
+🔒 What Is a Deadlock?
+A deadlock occurs when a group of processes are each waiting for resources held by the others, and none can proceed. It's like four people at a four-way stop, each waiting for the next to move—nobody goes anywhere.
+
+🧠 Example:
+Process A holds Resource 1 and waits for Resource 2.
+
+Process B holds Resource 2 and waits for Resource 1.
+
+Neither can proceed → deadlock.
+
+🛠️ How to Handle Deadlocks
+✅ 1. Prevention
+Prevent the conditions that lead to deadlock. There are four necessary conditions:
+
+Mutual exclusion: Only one process can use a resource.
+
+Hold and wait: A process holds one resource while waiting for another.
+
+No preemption: Resources can't be forcibly taken.
+
+Circular wait: A cycle of waiting processes.
+
+Prevention strategies:
+
+Avoid hold-and-wait by requiring all resources at once.
+
+Allow preemption: forcibly take resources.
+
+Impose ordering on resource requests to break circular wait.
+
+⚠️ 2. Avoidance
+Use algorithms to avoid unsafe states:
+
+Banker’s Algorithm: Checks if granting a resource keeps the system in a safe state.
+
+Requires knowing maximum resource needs in advance.
+
+🔍 3. Detection
+Let deadlocks happen, then detect and resolve:
+
+Periodically check for cycles in the resource allocation graph.
+
+If found, terminate or roll back one or more processes.
+
+💬 Interview POV Tips
+Say: “Deadlocks are a classic problem in concurrent systems. Handling them involves trade-offs between performance and safety.”
+
+Mention: “Prevention is proactive but conservative; detection is reactive but flexible.”
+
+Bonus: “In real systems like databases or OS kernels, deadlock detection is often preferred due to dynamic resource usage.”
