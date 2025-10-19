@@ -1,0 +1,80 @@
+🧩 Problem Statement
+Given an array prices where prices[i] is the price of a given stock on day i, you want to maximize your profit by choosing a single day to buy one stock and a different day in the future to sell that stock.
+
+You may not sell the stock before you buy it.
+
+✅ Constraints
+Only one transaction allowed (buy once, sell once).
+
+Return the maximum profit possible. If no profit is possible, return 0.
+
+💡 Optimal Solution (O(n) Time, O(1) Space)
+java
+public int maxProfit(int[] prices) {
+    int minPrice = Integer.MAX_VALUE;
+    int maxProfit = 0;
+
+    for (int price : prices) {
+        if (price < minPrice) {
+            minPrice = price;
+        } else if (price - minPrice > maxProfit) {
+            maxProfit = price - minPrice;
+        }
+    }
+
+    return maxProfit;
+}
+
+
+
+🧠 Explanation
+Track the minimum price seen so far.
+
+At each step, calculate the potential profit if you sold today.
+
+Update the maximum profit if this potential profit is higher.
+
+📈 Dynamic Programming Insight
+While this problem can be solved with a greedy approach, you can also think of it in DP terms:
+
+Let dp[i] be the max profit achievable up to day i.
+
+Transition: dp[i] = max(dp[i-1], prices[i] - minPrice)
+
+Update minPrice as you iterate.
+
+
+
+
+
+
+
+
+**code****///////////
+
+public class StockProfit {
+
+    public static int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        for (int price : prices) {
+            if (price < minPrice) {
+                minPrice = price;
+            } else if (price - minPrice > maxProfit) {
+                maxProfit = price - minPrice;
+            }
+        }
+
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        int profit = maxProfit(prices);
+        System.out.println("Maximum Profit: " + profit);
+    }
+}
+
+output
+Maximum Profit: 5
