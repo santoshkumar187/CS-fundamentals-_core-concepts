@@ -1,0 +1,59 @@
+n array is a special type of object used to store multiple values in a single variable. These values are ordered and indexed starting from 0.
+
+🧠 Key Characteristics
+✅ Ordered collection of elements
+
+✅ Can hold any data type: numbers, strings, objects, even other arrays
+
+✅ Zero-based indexing: first element is at index 0
+
+✅ Dynamic: you can add, remove, or modify elements
+
+
+
+
+✅ 1. Using reverse() Method
+js
+const original = [1, 2, 3, 4, 5];
+const reversed = original.reverse();
+
+console.log(reversed); // [5, 4, 3, 2, 1]
+⚠️ Note: reverse() modifies the original array.
+
+🔁 2. Without Modifying Original (Using slice())
+js
+const original = [1, 2, 3, 4, 5];
+const reversed = original.slice().reverse();
+
+console.log(reversed); // [5, 4, 3, 2, 1]
+console.log(original); // [1, 2, 3, 4, 5]
+🧠 3. Manual Reversal Using a Loop
+js
+const original = [1, 2, 3, 4, 5];
+const reversed = [];
+
+for (let i = original.length - 1; i >= 0; i--) {
+  reversed.push(original[i]);
+}
+
+console.log(reversed); // [5, 4, 3, 2, 1]
+
+
+
+
+
+
+
+
+
+//////////centre of array //////////
+
+
+If the array has an odd number of elements, the center is a single element:
+
+js
+const arr = [10, 20, 30, 40, 50];
+const centerIndex = Math.floor(arr.length / 2);
+const centerValue = arr[centerIndex];
+
+console.log(centerValue); // 30
