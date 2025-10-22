@@ -46,3 +46,89 @@ console.log(fruits[1]);   // "banana"
 | **Accessing Values** | `person.name` or `person["age"]`                         | `fruits[0]` or `fruits[1]`                     |
 | **Iteration**        | Use `for...in` or `Object.keys()`.                       | Use `for`, `forEach()`, `map()`, etc.          |
 | **Mutability**       | Can add/remove properties dynamically.                   | Can add/remove elements dynamically.           |
+
+
+
+/////////////////////////////////
+
+
+🎯 JavaScript Object & Array Interview Questions
+✅ 1. What is the difference between an object and an array in JavaScript?
+Expected Answer:
+
+Objects store data as key–value pairs, ideal for structured data.
+
+Arrays store ordered lists of items, ideal for sequences.
+
+✅ 2. How do you iterate over the properties of an object?
+Expected Answer:
+
+js
+const person = { name: "Santosh", age: 22 };
+for (let key in person) {
+  console.log(key, person[key]);
+}
+Or using Object.keys():
+
+js
+Object.keys(person).forEach(key => {
+  console.log(key, person[key]);
+});
+✅ 3. How do you clone an object?
+Expected Answer:
+
+js
+const original = { name: "Santosh" };
+const clone = { ...original }; // Shallow copy
+Or:
+
+js
+const clone = Object.assign({}, original);
+✅ 4. What is the difference between shallow and deep copy?
+Expected Answer:
+
+Shallow copy duplicates only the top-level properties.
+
+Deep copy duplicates nested objects too.
+
+js
+const deepClone = JSON.parse(JSON.stringify(obj)); // Deep copy
+✅ 5. How do you check if a property exists in an object?
+Expected Answer:
+
+js
+if ("name" in person) { ... }
+Or:
+
+js
+person.hasOwnProperty("name");
+✅ 6. How do you merge two objects?
+Expected Answer:
+
+js
+const merged = { ...obj1, ...obj2 };
+Or:
+
+js
+Object.assign({}, obj1, obj2);
+✅ 7. How do you convert an object to an array?
+Expected Answer:
+
+js
+Object.entries(person); // [['name', 'Santosh'], ['age', 22]]
+✅ 8. How do you access nested object properties safely?
+Expected Answer:
+
+js
+const city = person?.address?.city;
+✅ 9. How do you loop through an array of objects?
+Expected Answer:
+
+js
+const users = [{ name: "A" }, { name: "B" }];
+users.forEach(user => console.log(user.name));
+✅ 10. How do you sort an array of objects by a property?
+Expected Answer:
+
+js
+users.sort((a, b) => a.age - b.age);
