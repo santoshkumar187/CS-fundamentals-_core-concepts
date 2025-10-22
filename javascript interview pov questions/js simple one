@@ -1,0 +1,113 @@
+ — with explanations and examples 
+
+---
+
+## 🧠 JavaScript Interview Questions
+
+### ✅ 1. What are the different ways to declare variables in JavaScript?
+**Answer:**  
+- `var`: function-scoped, can be redeclared
+- `let`: block-scoped, can be updated but not redeclared
+- `const`: block-scoped, cannot be updated or redeclared
+
+```js
+let name = "Santosh";
+const age = 22;
+var city = "Kerala";
+```
+
+---
+
+### ✅ 2. What is the difference between `==` and `===`?
+**Answer:**  
+- `==` compares values **after type conversion**
+- `===` compares values **and types**
+
+```js
+"5" == 5   // true
+"5" === 5  // false
+```
+
+---
+
+### ✅ 3. What is a closure?
+**Answer:**  
+A closure is a function that **remembers variables from its outer scope**, even after the outer function has finished executing.
+
+```js
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+```
+
+---
+
+### ✅ 4. What is hoisting in JavaScript?
+**Answer:**  
+Hoisting is JavaScript's behavior of **moving declarations to the top** of their scope during compilation.
+
+```js
+console.log(x); // undefined
+var x = 5;
+```
+
+---
+
+### ✅ 5. What is the difference between `null` and `undefined`?
+**Answer:**
+- `undefined`: a variable declared but not assigned
+- `null`: an intentional absence of value
+
+```js
+let a;
+console.log(a); // undefined
+
+let b = null;
+console.log(b); // null
+```
+
+---
+
+### ✅ 6. What are arrow functions?
+**Answer:**  
+Arrow functions are a concise way to write functions. They **don’t have their own `this`**.
+
+```js
+const add = (a, b) => a + b;
+```
+
+---
+
+### ✅ 7. What is the difference between `let`, `const`, and `var` in terms of scope?
+**Answer:**
+- `var`: function-scoped
+- `let` and `const`: block-scoped
+
+---
+
+### ✅ 8. What is event bubbling?
+**Answer:**  
+Event bubbling is when an event starts from the **target element** and bubbles up to its ancestors.
+
+---
+
+### ✅ 9. What is the use of `this` keyword?
+**Answer:**  
+`this` refers to the **object that is executing the current function**.
+
+---
+
+### ✅ 10. What is the difference between synchronous and asynchronous code?
+**Answer:**
+- **Synchronous**: executes line by line
+- **Asynchronous**: allows non-blocking operations (e.g., `setTimeout`, `fetch`, `async/await`)
+
+---
+
