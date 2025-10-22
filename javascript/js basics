@@ -105,6 +105,6 @@ console.log("Hello, World!");
 // output 
 Hello, world!
 
-console.log("sarasan")
+console.log("web scripting language")
 // output
-sarasan
+web scripting language
