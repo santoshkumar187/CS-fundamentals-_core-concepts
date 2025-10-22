@@ -1,0 +1,48 @@
+1. How do you create an object in JavaScript?
+
+In JavaScript, an object is a collection of key–value pairs.
+There are several ways to create an object:
+
+✅ a. Object Literal (most common way)
+const person = {
+  name: "Santosh",
+  age: 22,
+  city: "Bengaluru"
+};
+
+✅ b. Using new Object()
+const car = new Object();
+car.brand = "Tata";
+car.model = "Nexon";
+
+✅ c. Using a Constructor Function
+function Student(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const s1 = new Student("Rahul", 21);
+
+✅ d. Using Object.create()
+const proto = { greet() { console.log("Hello!"); } };
+const user = Object.create(proto);
+user.name = "Sean";
+
+🧾 Summary Example
+const person = { name: "Sean", age: 22 }; // Object
+const fruits = ["apple", "banana", "mango"]; // Array
+
+console.log(person.name); // "Sean"
+console.log(fruits[1]);   // "banana"
+
+
+
+| Feature              | **Object**                                               | **Array**                                      |
+| -------------------- | -------------------------------------------------------- | ---------------------------------------------- |
+| **Definition**       | Collection of key–value pairs.                           | Ordered collection of elements.                |
+| **Keys / Indexes**   | Keys are **strings** (or symbols).                       | Indexes are **numeric (0, 1, 2, …)**.          |
+| **Usage**            | Used to represent structured data with named properties. | Used to store **lists or sequences** of items. |
+| **Example**          | `{ name: "Sean", age: 22 }`                              | `[ "apple", "banana", "mango" ]`               |
+| **Accessing Values** | `person.name` or `person["age"]`                         | `fruits[0]` or `fruits[1]`                     |
+| **Iteration**        | Use `for...in` or `Object.keys()`.                       | Use `for`, `forEach()`, `map()`, etc.          |
+| **Mutability**       | Can add/remove properties dynamically.                   | Can add/remove elements dynamically.           |
