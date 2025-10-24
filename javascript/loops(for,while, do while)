@@ -1,0 +1,131 @@
+🔁 1. for Loop
+Use case: Repeat a block of code a fixed number of times.
+
+✅ Example: Print numbers 1 to 5
+javascript
+for (let i = 1; i <= 5; i++) {
+  console.log("Number:", i);
+}
+How it works:
+
+let i = 1 → start at 1
+
+i <= 5 → run while i is less than or equal to 5
+
+i++ → increment i by 1 after each loop
+
+🔄 2. while Loop
+Use case: Repeat as long as a condition is true.
+
+✅ Example: Print numbers until user input is 0
+javascript
+let num = 5;
+while (num !== 0) {
+  console.log("Current:", num);
+  num--; // simulate user reducing input
+}
+Key point: If the condition is false at the start, it won’t run at all.
+
+🔂 3. do...while Loop
+Use case: Run the loop at least once, even if the condition is false.
+
+✅ Example: Ask for password until correct
+javascript
+let password;
+do {
+  password = prompt("Enter password:");
+} while (password !== "sangapp123");
+console.log("Access granted!");
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+
+
+Here are **5 important JavaScript loop interview questions** with clear answers and examples to help you prepare confidently:
+
+---
+
+### ✅ **1. What are the different types of loops in JavaScript?**
+
+**Answer:**
+JavaScript supports several loop types:
+- `for` loop
+- `while` loop
+- `do...while` loop
+- `for...in` loop (for object properties)
+- `for...of` loop (for iterable values like arrays and strings)
+
+---
+
+### ✅ **2. What’s the difference between `for...in` and `for...of` loops?**
+
+**Answer:**
+- `for...in` iterates over **keys** (property names) in an object.
+- `for...of` iterates over **values** in iterable objects like arrays, strings, maps.
+
+**Example:**
+```javascript
+const user = { name: "Santosh", age: 22 };
+for (let key in user) {
+  console.log(key); // name, age
+}
+
+const fruits = ["apple", "banana"];
+for (let fruit of fruits) {
+  console.log(fruit); // apple, banana
+}
+```
+
+---
+
+### ✅ **3. How do you break out of a loop early?**
+
+**Answer:**
+Use the `break` statement to exit a loop immediately when a condition is met.
+
+**Example:**
+```javascript
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) break;
+  console.log(i); // prints 1, 2
+}
+```
+
+---
+
+### ✅ **4. Write a loop to print even numbers between 1 and 10.**
+
+**Answer:**
+```javascript
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    console.log(i); // prints 2, 4, 6, 8, 10
+  }
+}
+```
+
+---
+
+### ✅ **5. Write a loop that finds the first duplicate element in an array.**
+
+**Answer:**
+```javascript
+const nums = [1, 3, 5, 3, 7, 1];
+const seen = new Set();
+
+for (let num of nums) {
+  if (seen.has(num)) {
+    console.log("First duplicate:", num); // 3
+    break;
+  }
+  seen.add(num);
+}
+```
