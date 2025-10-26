@@ -1,0 +1,100 @@
+SCOPE AND CLOSURES
+
+## 🔍 1. What is **Scope**?
+
+**Scope** determines where variables can be accessed in your code.
+
+### 🧱 Types of Scope in JavaScript:
+| Scope Type     | Description |
+|----------------|-------------|
+| **Global Scope** | Variables declared outside any function — accessible anywhere. |
+| **Function Scope** | Variables declared inside a function — accessible only within that function. |
+| **Block Scope** | Variables declared with `let` or `const` inside `{}` — accessible only inside that block. |
+
+### ✅ Example:
+```js
+let globalVar = "I am global"; // Global scope
+
+function greet() {
+  let name = "Santosh"; // Function scope
+  if (true) {
+    let mood = "Happy"; // Block scope
+    console.log(name);  // ✅ Accessible
+    console.log(mood);  // ✅ Accessible
+  }
+  // console.log(mood); ❌ Error: mood is not defined here
+}
+
+greet();
+console.log(globalVar); // ✅ Accessible
+// console.log(name); ❌ Error: name is not defined here
+```
+
+---
+
+## 🧠 2. What is a **Closure**?
+
+A **closure** is a function that **remembers the variables from its outer (enclosing) scope**, even after that outer function has finished executing.
+
+### 🔁 Why Closures Matter:
+- They **preserve state** between function calls.
+- Useful for **data privacy**, **function factories**, and **event handlers**.
+
+---
+
+### ✅ Closure Example: Counter Function
+```js
+function createCounter() {
+  let count = 0; // This variable is "closed over"
+
+  return function () {
+    count++;
+    console.log("Current count:", count);
+  };
+}
+
+const counter = createCounter();
+
+counter(); // Current count: 1
+counter(); // Current count: 2
+counter(); // Current count: 3
+```
+
+### 🔍 What’s Happening:
+- `createCounter()` returns an **inner function**.
+- That inner function **remembers** the `count` variable from its outer scope.
+- Even though `createCounter()` has finished running, `count` is still accessible because of the **closure**.
+
+---
+
+## 🧪 Real-World Use Case: Private Variables
+```js
+function secretNumber() {
+  let secret = 42;
+
+  return {
+    getSecret: function () {
+      return secret;
+    },
+    setSecret: function (newSecret) {
+      secret = newSecret;
+    }
+  };
+}
+
+const secretBox = secretNumber();
+console.log(secretBox.getSecret()); // 42
+secretBox.setSecret(99);
+console.log(secretBox.getSecret()); // 99
+```
+
+### 🔐 Why This Is Cool:
+- `secret` is **not accessible directly** — only through `getSecret()` and `setSecret()`.
+- This is how closures help **encapsulate data**.
+
+---
+
+## 🧠 Interview Tip:
+> “Closures allow functions to remember variables from their lexical scope.
+I’ve used them to build counters, manage state, and create private variables in JavaScript modules.”
+
