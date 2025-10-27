@@ -1,0 +1,77 @@
+
+
+## 🧠 Execution Context in JavaScript
+
+An **execution context** is the environment where JavaScript code is evaluated and executed. It contains everything the JS engine needs to run your code.
+
+### 🔹 Types of Execution Contexts
+1. **Global Execution Context (GEC)**  
+   - Created when the script starts.
+   - `this` refers to the global object (`window` in browsers).
+   - Only one GEC exists.
+
+2. **Function Execution Context (FEC)**  
+   - Created every time a function is invoked.
+   - Has its own scope, `this`, and variable environment.
+
+3. **Eval Execution Context** (rarely used)  
+   - Created when `eval()` is called.
+
+---
+
+### 🔍 What’s Inside an Execution Context?
+
+Each context has:
+- **Variable Environment**: Stores variables declared with `var`, function declarations.
+- **Lexical Environment**: Stores `let`, `const`, and closures.
+- **Scope Chain**: Enables access to outer variables.
+- **`this` Binding**: Depends on how the function is called.
+
+---
+
+## 🧱 Call Stack
+
+The **call stack** is a data structure that tracks function calls in order.
+
+### 🧪 Example:
+
+```javascript
+function greet() {
+  console.log("Hello");
+}
+
+function welcome() {
+  greet();
+  console.log("Welcome!");
+}
+
+welcome();
+```
+
+### 🔄 Stack Flow:
+1. `welcome()` is pushed onto the stack.
+2. Inside `welcome()`, `greet()` is called → pushed onto the stack.
+3. `greet()` finishes → popped off.
+4. `welcome()` finishes → popped off.
+
+---
+
+## 💼 Interview Questions on Execution Context & Call Stack
+
+Here are some oral-style questions you might get:
+
+### 🔹 Q1: What is an execution context in JavaScript?
+> Explain what happens when a function is invoked and what components are created.
+
+### 🔹 Q2: What’s the difference between global and function execution contexts?
+> Describe how variables and `this` behave differently.
+
+### 🔹 Q3: How does the call stack work in JavaScript?
+> Walk through a nested function example and explain the push/pop behavior.
+
+### 🔹 Q4: What happens when there’s a stack overflow?
+> Describe a scenario like infinite recursion and how the stack crashes.
+
+### 🔹 Q5: How do closures relate to execution context?
+> Explain how inner functions retain access to outer variables even after the outer function has returned.
+
