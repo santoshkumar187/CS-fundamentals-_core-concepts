@@ -1,0 +1,70 @@
+
+## 🔄 Types of Type Conversion in JavaScript
+
+### 1. **Implicit Type Conversion (Coercion)**  
+JavaScript automatically converts types when performing operations between different types.
+
+#### 🔹 Examples:
+```javascript
+"5" + 2       // "52" → number 2 is coerced to string
+"5" - 2       // 3 → string "5" is coerced to number
+true + 1      // 2 → true becomes 1
+false + "3"   // "false3" → false becomes string
+```
+
+#### 🔍 Rules:
+- `+` operator with a string → converts other operand to string.
+- `-`, `*`, `/` → convert operands to numbers.
+- Boolean `true` → 1, `false` → 0 when used in arithmetic.
+
+---
+
+### 2. **Explicit Type Conversion (Type Casting)**  
+You manually convert types using built-in functions.
+
+#### 🔹 Convert to Number:
+```javascript
+Number("42")       // 42
+Number("3.14")     // 3.14
+Number("")         // 0
+Number("abc")      // NaN
+```
+
+#### 🔹 Convert to String:
+```javascript
+String(100)        // "100"
+String(true)       // "true"
+String(null)       // "null"
+```
+
+#### 🔹 Convert to Boolean:
+```javascript
+Boolean(0)         // false
+Boolean("")        // false
+Boolean("hello")   // true
+Boolean(42)        // true
+```
+
+---
+
+## 📊 Common Conversion Scenarios
+
+| Expression       | Result      | Explanation                          |
+|------------------|-------------|--------------------------------------|
+| `"5" + 1`        | `"51"`      | Number is coerced to string          |
+| `"5" - 1`        | `4`         | String is coerced to number          |
+| `true + false`   | `1`         | true → 1, false → 0                  |
+| `null + 1`       | `1`         | null → 0                             |
+| `undefined + 1`  | `NaN`       | undefined → NaN                      |
+
+Sources: [GeeksforGeeks](https://www.geeksforgeeks.org/javascript/javascript-type-conversion/), [W3Schools](https://www.w3schools.com/js/js_type_conversion.asp), [freeCodeCamp](https://www.freecodecamp.org/news/coercion-and-type-conversion-in-javascript/)
+
+---
+
+## 🧠 Interview Tips
+
+- Know the difference between **coercion** and **casting**
+- Be ready to explain **why** `"5" + 1` gives `"51"` but `"5" - 1` gives `4`
+- Practice with edge cases like `null`, `undefined`, and `NaN`
+
+---
