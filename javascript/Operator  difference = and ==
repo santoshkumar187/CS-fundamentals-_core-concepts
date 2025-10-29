@@ -1,0 +1,53 @@
+
+
+## 🔥 **Equality: `==` vs `===`**
+
+### 🧠 What’s the Difference?
+
+| Operator | Name               | Behavior                          |
+|----------|--------------------|-----------------------------------|
+| `==`     | Loose Equality      | Converts types before comparing   |
+| `===`    | Strict Equality     | Compares without type conversion  |
+
+---
+
+### 🔍 Examples
+
+#### ✅ Loose Equality (`==`)
+```javascript
+"5" == 5        // true → string "5" is converted to number
+false == 0      // true → false becomes 0
+null == undefined // true → special case
+```
+
+#### ❌ Strict Equality (`===`)
+```javascript
+"5" === 5       // false → different types
+false === 0     // false → different types
+null === undefined // false
+```
+
+---
+
+## 🧪 Real-World Use Case
+
+```javascript
+let userInput = "0";
+
+if (userInput == false) {
+  console.log("Loose match"); // ✅ runs
+}
+
+if (userInput === false) {
+  console.log("Strict match"); // ❌ doesn't run
+}
+```
+
+---
+
+## 🧠 Interview Tip
+
+- Always prefer `===` for **predictable behavior**
+- Be ready to explain **type coercion** with `==`
+- Know the **quirky cases**: `null == undefined`, `[] == false`, `"" == 0`
+
