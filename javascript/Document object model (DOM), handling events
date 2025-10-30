@@ -1,0 +1,122 @@
+
+## 🧠 What is DOM Manipulation?
+
+DOM (Document Object Model) represents the structure of your HTML page as a tree of objects. JavaScript lets you **interact with and modify** this structure dynamically.
+
+---
+
+## 🔹 1. Selecting Elements
+
+### ✅ `document.querySelector()` and `document.querySelectorAll()`
+
+```html
+<p id="greeting">Hello!</p>
+```
+
+```javascript
+const para = document.querySelector("#greeting"); // selects first element with id="greeting"
+console.log(para.textContent); // "Hello!"
+```
+
+```html
+<ul>
+  <li class="item">One</li>
+  <li class="item">Two</li>
+</ul>
+```
+
+```javascript
+const items = document.querySelectorAll(".item"); // selects all elements with class="item"
+items.forEach(item => console.log(item.textContent));
+```
+
+---
+
+## 🔹 2. Modifying Content
+
+### ✅ `.textContent`, `.innerHTML`, `.value`
+
+```javascript
+para.textContent = "Welcome, Santosh!"; // changes text
+para.innerHTML = "<strong>Welcome!</strong>"; // inserts HTML
+```
+
+For input fields:
+```html
+<input type="text" id="nameInput" />
+```
+
+```javascript
+document.querySelector("#nameInput").value = "Santosh";
+```
+
+---
+
+## 🔹 3. Styling Elements
+
+### ✅ `.style` and `.classList`
+
+```javascript
+para.style.color = "blue";
+para.style.fontSize = "20px";
+```
+
+Using classes:
+```css
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+```
+
+```javascript
+para.classList.add("highlight"); // adds class
+para.classList.remove("highlight"); // removes class
+para.classList.toggle("highlight"); // toggles class
+```
+
+---
+
+## 🔹 4. Handling Events
+
+### ✅ `addEventListener()`
+
+```html
+<button id="clickMe">Click Me</button>
+```
+
+```javascript
+const btn = document.querySelector("#clickMe");
+
+btn.addEventListener("click", function() {
+  alert("Button clicked!");
+});
+```
+
+You can also use arrow functions:
+```javascript
+btn.addEventListener("mouseover", () => {
+  btn.style.backgroundColor = "lightgreen";
+});
+```
+
+---
+
+## 🧪 Mini Demo: Putting It All Together
+
+```html
+<input type="text" id="name" placeholder="Enter your name" />
+<button id="submitBtn">Greet</button>
+<p id="output"></p>
+```
+
+```javascript
+document.querySelector("#submitBtn").addEventListener("click", () => {
+  const name = document.querySelector("#name").value;
+  const output = document.querySelector("#output");
+  output.textContent = `Hello, ${name}!`;
+  output.classList.add("highlight");
+});
+```
+
+---
