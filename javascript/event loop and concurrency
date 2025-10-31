@@ -1,0 +1,104 @@
+The JavaScript event loop is a mechanism that allows concurrency—handling multiple 
+tasks asynchronously—even though JavaScript runs in a single-threaded environment in both browsers and Node.js.[1][4][5][6]
+
+### Key Components
+
+- **Call Stack:** Where JavaScript tracks function calls. Only one function executes at a time—functions are pushed and popped here as they run.[2][1]
+- **Web APIs:** Browser or Node.js features, like timers, AJAX requests, or event listeners. Asynchronous tasks are delegated here.[6]
+- **Callback Queue (Macrotasks):** Holds ordinary queued callbacks from asynchronous events, timers, and I/O operations.
+- **Microtask Queue:** Reserved for high-priority tasks like Promise resolutions and mutation observers. Microtasks always execute before macrotasks.[6]
+- **Event Loop:** Continuously checks if the call stack is empty and, if so, moves tasks from the queues for execution.[4][5]
+
+### Step-by-Step Example
+
+```js
+console.log('Start');
+
+setTimeout(() => {
+  console.log('setTimeout');
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('Promise');
+}).then(() => {
+  console.log('Another Promise');
+});
+
+console.log('End');
+```
+
+#### Execution Order
+
+1. `"Start"` is logged first; synchronous code always goes straight to the call stack.
+2. `setTimeout` schedules a callback (macrotask) and moves it to the callback queue after 0 ms.
+3. The Promise resolves immediately: its `.then` callback enters the microtask queue.
+4. `"End"` is logged next as sync code.
+5. Once the stack is empty:
+   - Microtasks (Promise callbacks) run before macrotasks: `"Promise"`, then `"Another Promise"` are logged.
+   - The event loop then runs the earliest macrotask callback: `"setTimeout"` is logged.
+
+**Output:**
+```
+Start
+End
+Promise
+Another Promise
+setTimeout
+```
+
+
+### Microtasks vs. Macrotasks
+
+- **Microtasks** (Promises): Always run immediately after the synchronous code and before any queued macrotask.
+- **Macrotasks** (setTimeout, setInterval, I/O): Run after all microtasks have been executed in that loop iteration.[4][6]
+
+concurrency*******************************************
+
+
+
+
+Concurrency in JavaScript means the ability to handle multiple tasks or operations at seemingly the same time, 
+even though JavaScript actually executes one task at a time due to its single-threaded model. 
+This is made possible by the event loop, asynchronous programming, and the smart use of Web APIs.[1][3][5][8]
+
+### How Concurrency Works
+
+- **Single-threaded Execution:** JavaScript processes code sequentially, one task after another, on a single thread.[7][1]
+- **Asynchronous Operations:** When a long-running task like an API call, timer, or file read 
+is encountered, JavaScript delegates it to an external environment (Web APIs in browsers, or Node APIs on the server).[5][1]
+- **Event Loop:** The event loop constantly checks if the call stack (where code runs) is empty. 
+When it is, it moves the next task (usually a callback) from the task queue back to the stack for execution.[3][1]
+- **Task Queues:** There are separate queues for macrotasks (timers, I/O) and microtasks (Promise resolutions).
+Microtasks always run to completion after the current stack finishes, before any macrotasks.[6][1][3]
+
+### Example
+
+```js
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Async Task Complete");
+}, 2000);
+
+console.log("End");
+```
+
+#### Output:
+```
+Start
+End
+Async Task Complete
+```
+
+- "Start" logs first—the synchronous code goes to the call stack and executes immediately.[1]
+- `setTimeout` is delegated to the browser and its callback is set to run after 2 seconds.
+- "End" logs next, as it is synchronous too.[1]
+- After 2 seconds, the callback is queued and, once the stack is empty, it runs and prints "Async Task Complete".[1]
+
+### Why It Matters
+
+This event loop and concurrency model allow JavaScript to efficiently handle user input, fetch data, and 
+perform background tasks without blocking everything else—keeping web pages and apps reactive and smooth. 
+Node.js uses the same system to handle thousands of simultaneous connections with a single thread, making it 
+great for APIs and real-time services.[8][5][1]
+
