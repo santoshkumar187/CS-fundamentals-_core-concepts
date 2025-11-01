@@ -1,0 +1,62 @@
+
+
+## ✅ 6. **Check for a Palindrome**
+```javascript
+function isPalindrome(str) {
+  const reversed = str.split('').reverse().join('');
+  return str === reversed;
+}
+
+console.log(isPalindrome("madam")); // true
+console.log(isPalindrome("hello")); // false
+```
+
+---
+
+## ✅ 7. **Factorial of a Number**
+```javascript
+function factorial(n) {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+
+console.log(factorial(5)); // 120
+```
+
+---
+
+## ✅ 8. **Fibonacci Series (First N Numbers)**
+```javascript
+function fibonacci(n) {
+  let a = 0, b = 1;
+  for (let i = 0; i < n; i++) {
+    console.log(a);
+    [a, b] = [b, a + b];
+  }
+}
+
+fibonacci(5); // 0 1 1 2 3
+```
+
+---
+
+## ✅ 9. **Count Vowels in a String**
+```javascript
+function countVowels(str) {
+  return str.match(/[aeiou]/gi)?.length || 0;
+}
+
+console.log(countVowels("Santosh")); // 2
+```
+
+---
+
+## ✅ 10. **Swap Two Variables**
+```javascript
+let a = 5, b = 10;
+[a, b] = [b, a];
+console.log(a, b); // 10 5
+```
