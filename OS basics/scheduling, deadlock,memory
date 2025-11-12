@@ -18,7 +18,7 @@ Waiting Time – Time spent waiting in ready queue.
 
 Turnaround Time – Total time from arrival to completion.
 
-📦 2. Process Synchronization
+📦 2. Process Synchronization,
 🧠 Concept:
 
 When multiple processes access shared data, synchronization prevents data inconsistency.
